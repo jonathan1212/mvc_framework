@@ -27,6 +27,11 @@ Router::get('post/delete/(:num)', 'Controllers\Post@delete');
 Router::get('post/comment', 'Controllers\Post@comment');
 Router::any('post/comment/(:all)', 'Controllers\Post@comment');
 
+
+//comments
+Router::get('sample', 'Controllers\Sample@index');
+
+
 /** Module routes. */
 $hooks = Hooks::get();
 $hooks->run('routes');

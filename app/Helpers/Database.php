@@ -30,7 +30,7 @@ class Database extends PDO
         $group = !$group ? array (
             'type' => 'mysql',
             'host' => 'localhost',
-            'name' => 'blog',
+            'name' => 'mvc',
             'user' => 'root',
             'pass' => ''
         ) : $group;

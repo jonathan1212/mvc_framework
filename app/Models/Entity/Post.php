@@ -3,6 +3,7 @@
 namespace Models\Entity;
 
 use Core\Model;
+use Zend\Hydrator\ClassMethods;
 use Zend\Stdlib\Hydrator;
 use Models\Entity\Author;
 
@@ -34,7 +35,7 @@ class Post extends Model
         $all = $this->getDb()->select($sql,$array,$fetchMode,$class);        
         
         $list = array();
-        $hydrator = new Hydrator\ClassMethods(true);
+        $hydrator = new ClassMethods(true);
 
         $data = array();
         foreach ($all as $each) {

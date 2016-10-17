@@ -5,6 +5,7 @@ namespace Form;
 use Zend\Form\Form as ZendForm;
 use Zend\InputFilter\InputFilterProviderInterface;
 use Models\Entity\Post;
+use Zend\Validator\File;
 
 class PostForm extends ZendForm implements InputFilterProviderInterface
 {
@@ -140,12 +141,13 @@ class PostForm extends ZendForm implements InputFilterProviderInterface
                         'min' => 4000, 'max' => 5000,
                     )),*/
                     //array('name' => 'fileupload'),
-                    array('name' => 'File\IsImage'),
-                    array('name' => 'File\UploadFile'),
+
+                    //array('name' => 'File\IsImage'),
+                    //array('name' => 'File\UploadFile'),
                 ),
             ),
 
-            
+
 
         );
     }

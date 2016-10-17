@@ -3,7 +3,7 @@
 namespace Models\Entity;
 
 use Core\Model;
-use Zend\Stdlib\Hydrator;
+use Zend\Hydrator\ClassMethods;
 
 class Author extends Model
 {
@@ -28,8 +28,8 @@ class Author extends Model
         $all = $this->getDb()->select($sql,$array,$fetchMode,$class);        
 
         $data = array();
-        
-        $hydrator = new Hydrator\ClassMethods(true);
+
+        $hydrator = new ClassMethods(true);
 
         foreach ($all as $each) {
             $hydrated = $hydrator->hydrate($each, new self);

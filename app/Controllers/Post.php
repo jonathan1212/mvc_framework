@@ -13,6 +13,7 @@ use Models\Entity\Comment as CommentEntity;
 use Form\PostForm;
 use Form\CommentForm;
 
+use Zend\Filter\File\RenameUpload;
 use Zend\Form\Form;
 
 /**
@@ -61,11 +62,11 @@ class Post extends Controller
             $post = array_merge_recursive(
                 $_POST, $_FILES
             );
-            
+
             $form->setData($post);
 
             if ($form->isValid()) {
-                
+
                 $filter = new \Zend\Filter\File\RenameUpload(array(
                     "target"    => "app/templates/default/images",
                     //"randomize" => true,
@@ -111,8 +112,13 @@ class Post extends Controller
 
                 $filter->filter($postParams['filename']);
 
+                try {
+                    $this->processEditForm($postParams,$id);
+                }catch (\Exception $e) {
+                    dump($e->getMessage());
+                    exit;
+                }
 
-                $this->processEditForm($postParams,$id);
 
                 Url::redirect('post');
             }

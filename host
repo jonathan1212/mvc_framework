@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+  
+  ServerName mvcframework.local
+  DirectoryIndex index.php
+  DocumentRoot "/Users/jonathan/Sites/SOURCES/mvc_framework"
+  
+  <Directory "/Users/jonathan/Sites/SOURCES/mvc_framework">
+    Options FollowSymLinks Indexes
+    AllowOverride All
+    Allow from All
+  </Directory>
+ </VirtualHost>

@@ -15,7 +15,9 @@
         "zendframework/zend-servicemanager": "dev-master",
         "zendframework/zend-i18n": "dev-master",
         "zendframework/zend-view": "dev-master",
-        "zendframework/zend-escaper": "dev-master"
+        "zendframework/zend-escaper": "dev-master",
+        "symfony/var-dumper": "^3.1",
+        "symfony/http-foundation": "^3.1"
 
     },
     "autoload": {
