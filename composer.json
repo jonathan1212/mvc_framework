@@ -1,0 +1,27 @@
+{
+    "name": "jonathan/mvc_framework",
+    "authors": [
+        {
+            "name": "jonathan antivo",
+            "email": "antivojonathan24@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/jonathan1212/mvc_framework",
+    "require": {
+        "php": ">=5.5.0",
+        "zendframework/zend-hydrator": "~1.0",
+        "zendframework/zend-form": "dev-master",
+        "zendframework/zend-eventmanager": "dev-master",
+        "zendframework/zend-servicemanager": "dev-master",
+        "zendframework/zend-i18n": "dev-master",
+        "zendframework/zend-view": "dev-master",
+        "zendframework/zend-escaper": "dev-master"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "": "app/"
+        }
+    },
+    "minimum-stability": "dev"
+}
