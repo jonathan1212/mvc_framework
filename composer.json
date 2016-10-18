@@ -17,7 +17,8 @@
         "zendframework/zend-view": "dev-master",
         "zendframework/zend-escaper": "dev-master",
         "symfony/var-dumper": "^3.1",
-        "symfony/http-foundation": "^3.1"
+        "symfony/http-foundation": "^3.1",
+        "zendframework/zend-db": "^2.8"
 
     },
     "autoload": {

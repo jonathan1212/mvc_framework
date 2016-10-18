@@ -30,6 +30,8 @@ Router::any('post/comment/(:all)', 'Controllers\Post@comment');
 
 //comments
 Router::get('sample', 'Controllers\Sample@index');
+Router::get('sample/table', 'Controllers\Sample@table');
+Router::get('sample/token', 'Controllers\Sample@token');
 
 
 /** Module routes. */

@@ -5,9 +5,12 @@ use Core\View;
 use Core\Controller;
 use Helpers\Request;
 use Helpers\Url;
+use Symfony\Component\HttpFoundation\File\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request as RS;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
+use Zend\Db\TableGateway\TableGateway;
 
 
 /**
@@ -58,6 +61,45 @@ class Sample extends Controller
         $x->send();
 
         //$this->render('/author/index',array('author' => $this->author->find('select * from author')));
+    }
+
+    public function token()
+    {
+        $request = RS::createFromGlobals();
+
+        $response = new Response();
+
+        header('HTTP/1.1 401 Unauthorized');
+        header('WWW-Authenticate: OAuth realm=""');
+        header('Content-Type: text/plain; charset=utf8');
+
+
+        $response->headers->set('auth','jonathan');
+        $r = $response->getContent();
+
+        //dump($r);
+        //exit;
+
+        dump('hisd');
+        //$x = new \RuntimeException('invalid token');
+
+        $x = new AccessDeniedException('Access Denied');
+
+        //echo sprintf('%s',$x->getMessage() . ' '. $x->getCode());
+
+    }
+
+    public function table()
+    {
+         //$table = new TableGateway();
+
+         $projectTable = new TableGateway('post', null);
+
+         dump($projectTable);
+         exit;
+
+
+         //$table->insert();
     }
 
 
